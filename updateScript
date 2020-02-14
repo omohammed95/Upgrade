@@ -1,9 +1,10 @@
 #!/bin/bash  -x
 
 function setup {
-	# check to install the needed  dependencies
-	#install deborphan
-       apt install deborphan
+
+  # check to install the needed  dependencies
+  #install deborphan
+  apt install deborphan
 
 }
 
