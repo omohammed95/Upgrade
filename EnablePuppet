@@ -4,8 +4,6 @@ function enable_puppet {
         # checks if puppet agent is enable
 	FILE=/opt/puppetlabs/puppet/cache/state/agent_disabled.lock
        if [ -f "$FILE" ]; then
-          FILE=/opt/puppetlabs/puppet/cache/state/agent_disabled.lock
-       if [ -f "$FILE" ]; then
           puppet agent --enable "puppet will be enabled because the upgrade process is complited successfully"
         else
 	  echo "puppet agent is already enable"
