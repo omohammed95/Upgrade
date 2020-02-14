@@ -1,5 +1,12 @@
 #!/bin/bash  -x
 
+function setup {
+	# check to install the needed packages 
+	#install deborphan
+       apt install deborphan
+
+}
+
 greeting() {
 
   echo
@@ -82,4 +89,3 @@ function UPDATE_C2C {
 
 }
 
-        
