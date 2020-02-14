@@ -1,7 +1,7 @@
 #!/bin/bash  -x
 
 function setup {
-	# check to install the needed packages 
+	# check to install the needed  dependencies
 	#install deborphan
        apt install deborphan
 
@@ -27,14 +27,13 @@ greeting() {
 }
 
 function DISABLE_PUPPET {
-        # this function will disable puppet agent in the system
-        puppet agent --disable "puppet will be disabled because the system is upgrading to new release"
-        # check if puppet agent successfully disabled
-        if [ $? == 0 ] ; then
-           echo "puppet agent disabled successfully"
-        else 
-              echo "erreur while disabling puppet please check your command "
-        fi
+        # this function will check ifpuppet agent disabled in the system or not
+	FILE=/opt/puppetlabs/puppet/cache/state/agent_disabled.lock
+       if [ -f "$FILE" ]; then
+          echo "puppet agent has already disabled"
+       else
+          puppet agent --disable "puppet will be disabled because the system is upgrading to new release"
+       fi
 
 }
 
