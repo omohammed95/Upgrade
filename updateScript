@@ -1,0 +1,85 @@
+#!/bin/bash  -x
+
+greeting() {
+
+  echo
+  echo "Hello,Let's update this system."
+  echo "##############################################################################################################################################################"
+  echo "  ______    ______    ______         __    __  _______    ______   _______    ______   _______   ________        ________  ______    ______   __              "
+  echo "       /      \  /      \  /      \       /  |  /  |/       \  /      \ /       \  /      \ /       \ /        |      /        |/      \  /      \ /  |       "
+  echo "   /$$$$$$  |/$$$$$$  |/$$$$$$  |      $$ |  $$ |$$$$$$$  |/$$$$$$  |$$$$$$$  |/$$$$$$  |$$$$$$$  |$$$$$$$$/       $$$$$$$$//$$$$$$  |/$$$$$$  |$$ |          "
+  echo "   $$ |  $$/ $$____$$ |$$ |  $$/       $$ |  $$ |$$ |__$$ |$$ | _$$/ $$ |__$$ |$$ |__$$ |$$ |  $$ |$$ |__             $$ |  $$ |  $$ |$$ |  $$ |$$ |          "
+  echo "   $$ |       /    $$/ $$ |            $$ |  $$ |$$    $$/ $$ |/    |$$    $$< $$    $$ |$$ |  $$ |$$    |            $$ |  $$ |  $$ |$$ |  $$ |$$ |          "
+  echo "   $$ |   __ /$$$$$$/  $$ |   __       $$ |  $$ |$$$$$$$/  $$ |$$$$ |$$$$$$$  |$$$$$$$$ |$$ |  $$ |$$$$$/             $$ |  $$ |  $$ |$$ |  $$ |$$ |          "
+  echo "   $$ \__/  |$$ |_____ $$ \__/  |      $$ \__$$ |$$ |      $$ \__$$ |$$ |  $$ |$$ |  $$ |$$ |__$$ |$$ |_____          $$ |  $$ \__$$ |$$ \__$$ |$$ |_____     "
+  echo "   $$    $$/ $$       |$$    $$/       $$    $$/ $$ |      $$    $$/ $$ |  $$ |$$ |  $$ |$$    $$/ $$       |         $$ |  $$    $$/ $$    $$/ $$       |    "
+  echo "    $$$$$$/  $$$$$$$$/  $$$$$$/         $$$$$$/  $$/        $$$$$$/  $$/   $$/ $$/   $$/ $$$$$$$/  $$$$$$$$/          $$/    $$$$$$/   $$$$$$/  $$$$$$$$/     " 
+  echo "###############################################################################################################################################################"
+  echo
+
+}
+
+function DISABLE_PUPPET {
+        # this function will disable puppet agent in the system
+        puppet agent --disable "puppet will be disabled because the system is upgrading to new release"
+        # check if puppet agent successfully disabled
+        if [ $? == 0 ] ; then
+           echo "puppet agent disabled successfully"
+        else 
+              echo "erreur while disabling puppet please check your command "
+        fi
+
+}
+
+function UPDATE_C2C {
+        echo
+        echo
+        echo "#########################"
+        echo "          Started"
+        echo "#########################"
+        echo
+
+        ## Updates package lists
+        apt update;
+        echo
+        echo "###############################"
+        echo "Finished updating package lists"
+        echo "###############################"
+        sleep 1
+## Updates packages and libraries
+        apt full-upgrade;
+        echo
+        echo "###############################################"
+        echo "Finished updating packages and system libraries"
+        echo "###############################################"
+        sleep 1
+        echo
+
+        ## Removes unneeded packages
+        apt --purge autoremove;
+        echo
+        echo "###################################"
+        echo "Finished removing unneeded packages"
+        echo "###################################"
+        sleep 1
+        echo
+        ## Removes unused config files
+        deborphan -n --find-config | xargs apt --purge autoremove;
+        echo
+        echo "#####################################"
+        echo "Finished removing unused config files"
+        echo "#####################################"
+        sleep 1
+        echo
+         ## Removes package files that can no longer be downloaded and everything except
+        # the lock file in /var/cache/apt/archives, including directories.
+        apt autoclean; apt clean;
+        echo
+        echo "######################################"
+        echo " Cleaned downloaded temporary packages"
+        echo "######################################"
+        echo
+
+}
+
+        
