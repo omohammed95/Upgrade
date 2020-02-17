@@ -89,3 +89,7 @@ function UPDATE_C2C {
 
 }
 
+setup
+greeting
+DISABLE_PUPPET
+UPGRADE_C2C
