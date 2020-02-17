@@ -34,6 +34,7 @@ function DISABLE_PUPPET {
           echo "puppet agent has already disabled"
        else
           puppet agent --disable "puppet will be disabled because the system is upgrading to new release"
+	echo "Puppet has been diabled successfully!!  "
        fi
 
 }
