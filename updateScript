@@ -6,7 +6,7 @@ function root {
          if [[ $EUID -ne 0 ]] ; then
             clear
             echo ""
-            echo "c2c ugrade tool must be run as root or with sudo. Now I will just exit..." 1>&2
+            echo "c2c upgrade tool must be run as root or with sudo. Now I will just exit..." 1>&2
             echo ""
             sleep 2
             exit 1
