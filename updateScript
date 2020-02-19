@@ -1,5 +1,18 @@
 #!/bin/bash  -x
 
+function root {
+
+ # Checking if the user has run the script with "sudo" or not
+ if [[ $EUID -ne 0 ]] ; then
+   clear
+   echo ""
+   echo "uCareSystem Core must be run as root or with sudo. Now I will just exit..." 1>&2
+   echo ""
+   sleep 2
+   exit 1
+fi
+}
+
 function setup {
 
   # check to install the needed  dependencies
@@ -90,6 +103,7 @@ function UPDATE_C2C {
 
 }
 
+root
 setup
 greeting
 DISABLE_PUPPET
