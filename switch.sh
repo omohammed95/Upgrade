@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 #To check if prompt is in lts
 cd /etc/update-manager/
