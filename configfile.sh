@@ -21,3 +21,6 @@ function DISABLE_PPAs {
 
 
 }
+
+SWITCH_TO_LTS
+DISABLE_PPAs
