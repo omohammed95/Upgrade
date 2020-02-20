@@ -15,7 +15,7 @@ function SWITCH_TO_LTS {
 }
 
 function DISABLE_PPAs {
-        #this function will remove the # character in lines that begin with deb.
+        #this function will add the # character in lines that begin with deb.
         sed -i -E 's/^/#/' /etc/apt/sources.list.d/*.list
 
 
