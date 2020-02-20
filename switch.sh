@@ -9,6 +9,6 @@ then
 echo "nothing to it's already in lts"
 else
  echo "Switching to the 'lts' release channel (if 'never' or 'normal')"
- sed -i 's/Prompt=(never|normal)/Prompt=lts/g' "/etc/update-manager/release-upgrades"
+ sed -i -E 's/Prompt=(never|normal)/Prompt=lts/g' "/etc/update-manager/release-upgrades"
 fi
 
