@@ -1,6 +1,6 @@
 #!/bin/bash  -x
 
-function root {
+function LogRight {
 
         # Checking if the user has run the script with "sudo" or not
        if [[ $EUID -ne 0 ]] ; then
@@ -103,7 +103,7 @@ function UPDATE_C2C {
 
 }
 
-root
+LogRight
 setup
 greeting
 DISABLE_PUPPET
