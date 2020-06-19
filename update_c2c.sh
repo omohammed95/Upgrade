@@ -128,7 +128,7 @@ function UPDATE_C2C {
         echo
 	echo
         echo "######################################"
-        echo " You need to reboot the machine menaully in order to upgrade to ubuntu version 20.04"
+        echo " You need to reboot the machine manually in order to upgrade to ubuntu version 20.04"
         echo "######################################"
         echo
 
