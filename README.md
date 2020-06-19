@@ -33,6 +33,8 @@ First you need to:
 
 * Run the first script using: 
 *bash update_c2c.sh*
+
+
 **Two important points to verify:** if puppet is disabled (if /opt/puppetlabs/puppet/cache/state/agent_disabled.lock exist it means puppet agent has been disabled).normally it can be done by the script but we need to verify just to be sure. secondly we if PPAs disabled (make sure that the .deb is commented in docker-ce.list slack-desktop.list user.list in /etc/apt/sources.list.d/).
 
 * Reboot the machine.
