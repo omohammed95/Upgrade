@@ -3,7 +3,7 @@
 c2c upgrade is a bash tool to upgrade c2c machines to the new version 20.04.
 
 
-# Discription
+# Description
 
 In summary c2c upgrade tool automatically performs the following maintenance processes without any need of user interference:
 
