@@ -41,6 +41,6 @@ First you need to:
 * Now you need to run the command: 
 *bash version_upgrade.sh*
 
-  Just follow the instructions the prosses will take 20-30 min. you will be successfuly upgraded to the new version of ubuntu 20.04.   
+  Just follow the instructions the process will take 20-30 min. you will be successfuly upgraded to the new version of Ubuntu 20.04.   
 
 
