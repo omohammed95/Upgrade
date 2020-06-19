@@ -25,17 +25,19 @@ First you need to:
 
 * git clone using:
 
-  * git clone https://github.com/omohammed95/Upgrade *
+  * git clone https://github.com/omohammed95/Upgrade*
 
-** We decided to separate our script in to two parts in order to reboot the machines manually after running the first script.**
+## We decided to separate our script in to two parts in order to reboot the machines manually after running the first script.
 
 * Run as admin(root)
 
-* Run the first script using: *bash update_c2c.sh*
-  two important points to verify: if puppet is disabled (if /opt/puppetlabs/puppet/cache/state/agent_disabled.lock exist it means puppet agent has been disabled).normally it can be done by the script but we need to verify just to be sure. secondly we if PPAs disabled (make sure that the .deb is commented in docker-ce.list slack-desktop.list user.list in /etc/apt/sources.list.d/).
+* Run the first script using: 
+* bash update_c2c.sh*
+#### Two important points to verify: if puppet is disabled (if /opt/puppetlabs/puppet/cache/state/agent_disabled.lock exist it means puppet agent has been disabled).normally it can be done by the script but we need to verify just to be sure. secondly we if PPAs disabled (make sure that the .deb is commented in docker-ce.list slack-desktop.list user.list in /etc/apt/sources.list.d/).
 
 * Reboot the machine.
-* Now you need to run the command: * bash version_upgrade.sh *
+* Now you need to run the command: 
+* bash version_upgrade.sh*
 
   Just follow the instructions the prosses will take 20-30 min. you will be successfuly upgraded to the new version of ubuntu 20.04.   
 
