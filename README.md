@@ -39,8 +39,10 @@ First you need to:
 
 * Reboot the machine.
 * Now you need to run the command: 
-*bash version_upgrade.sh*
+*sudo  do-release-upgrade -d*
 
-  Just follow the instructions the process will take 20-30 min. you will be successfuly upgraded to the new version of Ubuntu 20.04.   
-
-
+  Just follow the instructions the process will take 20-30 min. you will be successfuly upgraded to the new version of Ubuntu 20.04. 
+  
+**After the upgrade:** need to enable
+*Puppet using the command:        puppet agent --enable 
+*PPAs : in /etc/apt/sources.list.d files name docker-ce.list, slack-desktop.list and user.list  remove the # character from lines that begin with deb. after removing # character you need to run commands: apt update & apt upgrade.
